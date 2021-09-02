@@ -10,15 +10,6 @@ public class TubeGeneration : ObjectPool
     private float _elepsedTime = 0;
 
 
-    private void Start()
-    {
-        Initialize(_prefabTube);
-    }
-    private void Update()
-    {
-        Generated();
-    }
-
     private void Generated()
     {
         _elepsedTime += Time.deltaTime;
@@ -41,5 +32,14 @@ public class TubeGeneration : ObjectPool
     private float GetRandomPosition(float minValue, float maxValue)
     {
         return Random.Range(minValue, maxValue);
+    }
+
+    private void Start()
+    {
+        Initialize(_prefabTube);
+    }
+    private void Update()
+    {
+        Generated();
     }
 }

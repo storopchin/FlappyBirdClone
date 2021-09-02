@@ -12,7 +12,7 @@ public class BirdMover : MonoBehaviour
     [SerializeField] private float _maxRotationAxisZ;
     [SerializeField] private float _minRotationAxisZ;
 
-    private bool IsPressedSpaceKey => Input.GetKey(KeyCode.Space);
+    private bool IsPressedSpaceKey => Input.GetMouseButton(0);
     private Rigidbody2D _rigidBird;
     private Quaternion _maxRotation;
     private Quaternion _minRotation;

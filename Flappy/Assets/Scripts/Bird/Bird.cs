@@ -21,6 +21,7 @@ public class Bird : MonoBehaviour
     }
     public void Die()
     {
+        gameObject.SetActive(false);
         GameOver?.Invoke();
     }
     public void ResetPlayer()
@@ -28,11 +29,20 @@ public class Bird : MonoBehaviour
         _score = 0;
         ScoreChanged?.Invoke(_score);
         _mover.ResetBirdToStart();
+        gameObject.SetActive(true);
     }
-
+    public void Enable()
+    {
+        gameObject.SetActive(true);
+    }
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+    }
 
     private void Start()
     {
         _mover = GetComponent<BirdMover>();
+        gameObject.SetActive(false);
     }
 }
